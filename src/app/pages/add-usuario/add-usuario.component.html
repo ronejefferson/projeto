@@ -1,27 +1,33 @@
 <section class="container">
-<form>
-        <div class="form-froup">
+<form #fc=ngForm (ngSubmit)="onsubmit(fc)">
+        <div class="form-group">
           <label for=""></label>
-          <input type="text" class="form-control" [(ngModel)]="usuario.nome"  placeholder="Seu nome">
+          <input type="text" class="form-control" [(ngModel)]="usuario.nome"  placeholder="Seu nome" name="nome" required type="email">
           <small class="form-text text-muted"></small>
         </div>
 
-        <div class="form-froup">
+        <div class="form-group">
           <label for=""></label>
-          <input type="email" class="form-control" [(ngModel)]="usuario.email" placeholder="Seu email">
-          <small class="form-text text-muted"></small>
+          <input type="email" class="form-control" [(ngModel)]="usuario.email" placeholder="Seu email" name="email"  >
+          <small class="form-text text-muted" ></small>
         </div>
 
-        <div class="form-froup">
+        <div class="form-group">
             <label for=""></label>
-            <input type="password" class="form-control" [(ngModel)]="usuario.pws" placeholder="senha">
-            <small class="form-text text-muted"></small>
-        </div>        
+            <input type="password" class="form-control" (ngModel)="usuario.pws" placeholder="senha" name="pws" required minlength="6" #pws="ngModel">
+            <small class="form-text text-danger" *ngIf="pws.invalid">Senha muito curta</small>
+        </div>     
+        
+        <div class="form-group">
+          <label for=""></label>
+          <input type="password" class="form-control" (ngModel)="conf" placeholder="Confirmar senha" name="conf" required #conf="ngModel">
+          <small class="form-text text-danger" *ngIf="pws.value!= conf.value" >Senhas diferentes</small>
+        </div> 
+
         <p></p>
-        <div class="form-froup">
-            <button type="submit" class="btn-primary">Salvar</button>
-            &nbsp;
-            <button type="reset" class="btn-primary">Cancelar</button>
+        <div class="form-group text-right">
+            <button type="submit" class="btn btn-primary ml-2"  [disabled]="fc.invalid || pws.value!= conf.value">Salvar</button>
+            <button type="reset" class="btn btn-primary ml-2">Cancelar</button>
             
         </div>  
            

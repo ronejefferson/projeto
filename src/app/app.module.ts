@@ -15,7 +15,7 @@ import { AddUsuarioComponent } from './pages/add-usuario/add-usuario.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
