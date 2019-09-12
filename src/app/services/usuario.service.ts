@@ -21,4 +21,9 @@ export class UsuarioService {
   save(usuario:Usuario){
     return this.http.post(this.db + "usuarios", usuario)
   }
+
+  getAll(){
+    return this.http.get(this.db + "usuarios")
+  }
+  
 }

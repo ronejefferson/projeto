@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../model/usuario';
 import { UsuarioService } from '../../services/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-usuario',
@@ -12,7 +13,8 @@ export class AddUsuarioComponent implements OnInit {
   protected usuario:Usuario = new Usuario;
 
   constructor(
-    protected usuarioService:UsuarioService
+    protected usuarioService:UsuarioService,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -24,9 +26,12 @@ export class AddUsuarioComponent implements OnInit {
     .subscribe(
       res => {
         console.log("Cadastrado!",res);
+        alert("Cadastrado!");
+        this.router.navigate(['']);
       },
-      xuxu => {
-        console.log("Não cadastrado!",xuxu)
+      err => {
+        console.log("Não cadastrado!",err)
+        alert("Não cadastrado!");
       }
     )
 
