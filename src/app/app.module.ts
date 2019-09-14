@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { PageNavComponent } from './pages/page-nav/page-nav.component';
 import { AddUsuarioComponent } from './pages/add-usuario/add-usuario.component';
 import { ListUsuarioComponent } from './pages/list-usuario/list-usuario.component';
+import { AddEventoComponent } from './pages/add-evento/add-evento.component';
+import { ListEventoComponent } from './pages/list-evento/list-evento.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNavComponent,
     AddUsuarioComponent,
-    ListUsuarioComponent
+    ListUsuarioComponent,
+    AddEventoComponent,
+    ListEventoComponent
   ],
   imports: [
     BrowserModule,
