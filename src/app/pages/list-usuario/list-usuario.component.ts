@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../../services/usuario.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-list-usuario',
@@ -7,12 +7,12 @@ import { UsuarioService } from '../../services/usuario.service';
   styleUrls: ['./list-usuario.component.css']
 })
 export class ListUsuarioComponent implements OnInit {
-  protected usuarios:any;
+
+ protected usuarios:any;
 
   constructor(
-    protected usuarioService:UsuarioService 
-  ) {}
-  
+    protected usuarioService:UsuarioService
+  ) { }
 
   ngOnInit() {
     this.usuarios = this.usuarioService.getAll();

@@ -1,8 +1,8 @@
 export class Evento {
+    id:number;
     nome:string;
     tema:string;
     data:string;
-    horario:string;
+    hora:string;
     ativo:boolean = true;
-
 }

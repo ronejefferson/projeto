@@ -1,18 +1,18 @@
 <section class="container">
-    <table class="table" *ngIf="eventosgi | async as users">
-        <tr>
-            
-            <th>Nome</th>
-            <th>Tema</th>
-            <th>Data</th>
-            <th>Horario</th>
-        </tr>
-        <tr *ngFor="let user of users">
-           >
-            <td>{{user.nome}}</td>
-            <td>{{user.tema}}</td>
-            <td>{{user.data}}</td>
-            <td>{{user.horario}}</td>
-        </tr>
-    </table>
-</section>
+        <table class="table" *ngIf="eventos | async as events">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Tema</th>
+                <th>Data</th>
+                <th>Hora</th>
+            </tr>
+            <tr *ngFor="let e of events">
+                <td>{{e.id}}</td>
+                <td>{{e.nome}}</td>
+                <td>{{e.tema}}</td>
+                <td>{{e.data | date:"dd/MM/yyyy"}}</td>
+                <td>{{e.hora}}</td>
+            </tr>
+        </table>
+    </section>
