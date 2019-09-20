@@ -41,17 +41,4 @@ export class AddUsuarioComponent implements OnInit {
       )
   }
 
-  protected cep: string;
-
-  buscaCep() {
-    if (this.cep.length > 7) {
-      this.usuarioService.getEndereco(this.cep)
-        .subscribe(
-          res => {
-            console.log(res);
-          }
-        )
-    }
-  }
-
 }

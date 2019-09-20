@@ -2,24 +2,18 @@
   "usuarios": [
     {
       "ativo": true,
-      "nome": "Ana Maria",
-      "email": "ana@email.com",
+      "endereco": {
+        "cep": "23520-120",
+        "logradouro": "Rua Antenor",
+        "localidade": "Rio de Janeiro",
+        "bairro": "Santa Cruz",
+        "uf": "RJ",
+        "numero": "11"
+      },
+      "nome": "Mario da Silva",
+      "email": "mario@email.com",
       "pws": "111111",
       "id": 1
-    },
-    {
-      "ativo": true,
-      "nome": "Carlos Mario",
-      "email": "cm@email.com",
-      "pws": "111111",
-      "id": 2
-    },
-    {
-      "ativo": true,
-      "nome": "Paula Martins",
-      "email": "pm@email.com",
-      "pws": "111111",
-      "id": 3
     }
   ],
   "eventos": [
