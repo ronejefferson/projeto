@@ -7,8 +7,12 @@
             <th>CEP</th>
             <th>Endereco</th>
             <th>Numero</th>
-            <th>/</th>
-            <th>X</th>
+            <th>
+                <i class="fa fa-edit"></i>
+            </th>
+            <th>
+                <i class="fa fa-trash"></i>
+            </th>
         </tr>
         <tr *ngFor="let user of users">
             <td>{{user.id}}</td>
@@ -17,8 +21,12 @@
             <td>{{user.endereco.cep}}</td>
             <td>{{user.endereco.logradouro}}</td>
             <td>{{user.endereco.numero}}</td>
-            <td routerLink="/addUsuario/{{user.id}}">/</td>
-            <td>X</td>
+            <td routerLink="/addUsuario/{{user.id}}" style="cursor: pointer">
+                <i class="fa fa-edit"></i>
+            </td>
+            <td (click)="apagar(user)" style="cursor: pointer">
+                <i class="fa fa-trash"></i>
+            </td>
         </tr>
     </table>
 </section>

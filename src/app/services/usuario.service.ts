@@ -30,4 +30,8 @@ export class UsuarioService {
     return this.http.delete(this.db + "usuarios/" + id)
   }
 
+  get(id) {
+    return this.http.get<Usuario>(this.db + "usuarios/" + id)
+  }
+
 }
